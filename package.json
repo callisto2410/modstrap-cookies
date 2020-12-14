@@ -1,0 +1,35 @@
+{
+  "name": "@modstrap/cookies",
+  "version": "1.0.0",
+  "description": "Adaptation for js-cookie.",
+  "main": "dist/Cookies.js",
+  "types": "dist/Cookies.d.ts",
+  "author": "Callisto (https://github.com/callisto2410)",
+  "license": "MIT",
+  "homepage": "https://github.com/callisto2410/modstrap-cookies",
+  "bugs": {
+    "url": "https://github.com/callisto2410/modstrap-cookies/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callisto2410/modstrap-cookies.git"
+  },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:production && npm run build:demo",
+    "build:production": "tsc --project tsconfig.json",
+    "build:demo": "webpack --config webpack.config.js",
+    "build:demo:watch": "webpack --watch --config webpack.config.js",
+    "build:clean": "npx rimraf .cache dist *.tgz",
+    "build:pack": "npm run build:clean && npm run build:production && npm pack"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "js-cookie": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.12",
+    "typescript": "^4.1.3",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {}
+}
