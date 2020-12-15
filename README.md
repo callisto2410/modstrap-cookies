@@ -17,7 +17,7 @@ npm i https://github.com/callisto2410/modstrap-cookies.git
 ## Usage
 
 ```ts
-import Cookies from '@modstrap/Cookies';
+import Cookies from '@modstrap/cookies';
 
 Cookies.set('name', 'value', {expires: 7});
 ```
