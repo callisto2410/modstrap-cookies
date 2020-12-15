@@ -1,4 +1,4 @@
-import * as JSCookies from 'js-cookie';
+import {default as JSCookies} from 'js-cookie';
 
 type Value = string | object;
 

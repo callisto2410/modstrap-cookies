@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const JSCookies = require("js-cookie");
+const js_cookie_1 = __importDefault(require("js-cookie"));
 /**
  * Manages the lifecycle of browser cookies.
  *
@@ -18,7 +21,7 @@ class Cookies {
      * @param options
      */
     static set(name, value, options) {
-        return JSCookies.set(name, value, options);
+        return js_cookie_1.default.set(name, value, options);
     }
     /**
      * Read cookie.
@@ -26,7 +29,7 @@ class Cookies {
      * @param name
      */
     static get(name) {
-        return (name) ? JSCookies.get(name) : JSCookies.get();
+        return (name) ? js_cookie_1.default.get(name) : js_cookie_1.default.get();
     }
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
@@ -34,7 +37,7 @@ class Cookies {
      * @param name
      */
     static getJSON(name) {
-        return (name) ? JSCookies.getJSON(name) : JSCookies.getJSON();
+        return (name) ? js_cookie_1.default.getJSON(name) : js_cookie_1.default.getJSON();
     }
     /**
      * Delete cookie.
@@ -43,7 +46,7 @@ class Cookies {
      * @param options
      */
     static remove(name, options) {
-        JSCookies.remove(name, options);
+        js_cookie_1.default.remove(name, options);
     }
 }
 exports.default = Cookies;
