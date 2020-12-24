@@ -100,7 +100,7 @@ class Cookies {
      * @param name
      */
     static get(name?: string): Cookie | AllCookies {
-        return (name) ? JSCookies.get(name) : JSCookies.get();
+        return JSCookies.get();
     }
 
     /**
@@ -121,7 +121,7 @@ class Cookies {
      * @param name
      */
     static getJSON(name?: string): Cookie | ParsedJSON {
-        return (name) ? JSCookies.getJSON(name) : JSCookies.getJSON();
+        return JSCookies.getJSON();
     }
 
     /**

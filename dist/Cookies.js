@@ -29,7 +29,7 @@ class Cookies {
      * @param name
      */
     static get(name) {
-        return (name) ? js_cookie_1.default.get(name) : js_cookie_1.default.get();
+        return js_cookie_1.default.get();
     }
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
@@ -37,7 +37,7 @@ class Cookies {
      * @param name
      */
     static getJSON(name) {
-        return (name) ? js_cookie_1.default.getJSON(name) : js_cookie_1.default.getJSON();
+        return js_cookie_1.default.getJSON();
     }
     /**
      * Delete cookie.
