@@ -19,6 +19,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cookies = void 0;
 const JSCookies = __importStar(require("js-cookie"));
 /**
  * Manages the lifecycle of browser cookies.
@@ -65,4 +66,5 @@ class Cookies {
         JSCookies.remove(name, options);
     }
 }
+exports.Cookies = Cookies;
 exports.default = Cookies;

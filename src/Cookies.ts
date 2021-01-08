@@ -1,6 +1,6 @@
 import * as JSCookies from "js-cookie";
 
-interface Attributes {
+export interface CookiesAttributes {
     /**
      * Define when the cookie will be removed. Value can be a Number
      * which will be interpreted as days from time of creation or a
@@ -33,17 +33,17 @@ interface Attributes {
     sameSite?: "strict" | "Strict" | "lax" | "Lax" | "none" | "None";
 }
 
-interface AllCookies {
+export interface CookiesAllCookies {
     [key: string]: string;
 }
 
-interface ParsedJSON {
+export interface CookiesParsedJSON {
     [key: string]: any;
 }
 
-type Value = string | object;
+export type CookiesValue = string | object;
 
-type Cookie = string | undefined;
+export type CookiesCookie = string | undefined;
 
 /**
  * Manages the lifecycle of browser cookies.
@@ -53,14 +53,14 @@ type Cookie = string | undefined;
  * @see getJSON
  * @see remove
  */
-class Cookies {
+export class Cookies {
     /**
      * Create a cookie.
      *
      * @param name
      * @param value
      */
-    static set(name: string, value: Value): Cookie;
+    public static set(name: string, value: CookiesValue): CookiesCookie;
 
     /**
      * Create a cookie.
@@ -69,7 +69,7 @@ class Cookies {
      * @param value
      * @param options
      */
-    static set(name: string, value: Value, options: Attributes): Cookie;
+    public static set(name: string, value: CookiesValue, options: CookiesAttributes): CookiesCookie;
 
     /**
      * Create a cookie.
@@ -78,49 +78,49 @@ class Cookies {
      * @param value
      * @param options
      */
-    static set(name: string, value: Value, options?: Attributes): Cookie {
+    public static set(name: string, value: CookiesValue, options?: CookiesAttributes): CookiesCookie {
         return JSCookies.set(name, value, options);
     }
 
     /**
      * Read all available cookies.
      */
-    static get(): AllCookies;
+    public static get(): CookiesAllCookies;
 
     /**
      * Read cookie.
      *
      * @param name
      */
-    static get(name: string): Cookie;
+    public static get(name: string): CookiesCookie;
 
     /**
      * Read cookie.
      *
      * @param name
      */
-    static get(name?: string): Cookie | AllCookies {
+    public static get(name?: string): CookiesCookie | CookiesAllCookies {
         return JSCookies.get();
     }
 
     /**
      * Returns the parsed representation of all cookies according to JSON.parse.
      */
-    static getJSON(): ParsedJSON;
+    public static getJSON(): CookiesParsedJSON;
 
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
      *
      * @param name
      */
-    static getJSON(name: string): Cookie | ParsedJSON;
+    public static getJSON(name: string): CookiesCookie | CookiesParsedJSON;
 
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
      *
      * @param name
      */
-    static getJSON(name?: string): Cookie | ParsedJSON {
+    public static getJSON(name?: string): CookiesCookie | CookiesParsedJSON {
         return JSCookies.getJSON();
     }
 
@@ -129,7 +129,7 @@ class Cookies {
      *
      * @param name
      */
-    static remove(name: string): void;
+    public static remove(name: string): void;
 
     /**
      * Delete cookie.
@@ -137,7 +137,7 @@ class Cookies {
      * @param name
      * @param options
      */
-    static remove(name: string, options: Attributes): void;
+    public static remove(name: string, options: CookiesAttributes): void;
 
     /**
      * Delete cookie.
@@ -145,7 +145,7 @@ class Cookies {
      * @param name
      * @param options
      */
-    static remove(name: string, options?: Attributes): void {
+    public static remove(name: string, options?: CookiesAttributes): void {
         JSCookies.remove(name, options);
     }
 }

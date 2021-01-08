@@ -1,4 +1,4 @@
-interface Attributes {
+export interface CookiesAttributes {
     /**
      * Define when the cookie will be removed. Value can be a Number
      * which will be interpreted as days from time of creation or a
@@ -26,14 +26,14 @@ interface Attributes {
      */
     sameSite?: "strict" | "Strict" | "lax" | "Lax" | "none" | "None";
 }
-interface AllCookies {
+export interface CookiesAllCookies {
     [key: string]: string;
 }
-interface ParsedJSON {
+export interface CookiesParsedJSON {
     [key: string]: any;
 }
-declare type Value = string | object;
-declare type Cookie = string | undefined;
+export declare type CookiesValue = string | object;
+export declare type CookiesCookie = string | undefined;
 /**
  * Manages the lifecycle of browser cookies.
  *
@@ -42,14 +42,14 @@ declare type Cookie = string | undefined;
  * @see getJSON
  * @see remove
  */
-declare class Cookies {
+export declare class Cookies {
     /**
      * Create a cookie.
      *
      * @param name
      * @param value
      */
-    static set(name: string, value: Value): Cookie;
+    static set(name: string, value: CookiesValue): CookiesCookie;
     /**
      * Create a cookie.
      *
@@ -57,27 +57,27 @@ declare class Cookies {
      * @param value
      * @param options
      */
-    static set(name: string, value: Value, options: Attributes): Cookie;
+    static set(name: string, value: CookiesValue, options: CookiesAttributes): CookiesCookie;
     /**
      * Read all available cookies.
      */
-    static get(): AllCookies;
+    static get(): CookiesAllCookies;
     /**
      * Read cookie.
      *
      * @param name
      */
-    static get(name: string): Cookie;
+    static get(name: string): CookiesCookie;
     /**
      * Returns the parsed representation of all cookies according to JSON.parse.
      */
-    static getJSON(): ParsedJSON;
+    static getJSON(): CookiesParsedJSON;
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
      *
      * @param name
      */
-    static getJSON(name: string): Cookie | ParsedJSON;
+    static getJSON(name: string): CookiesCookie | CookiesParsedJSON;
     /**
      * Delete cookie.
      *
@@ -90,6 +90,6 @@ declare class Cookies {
      * @param name
      * @param options
      */
-    static remove(name: string, options: Attributes): void;
+    static remove(name: string, options: CookiesAttributes): void;
 }
 export default Cookies;
