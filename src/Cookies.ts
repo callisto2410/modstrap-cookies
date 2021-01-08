@@ -1,8 +1,4 @@
-import {default as JSCookies} from 'js-cookie';
-
-type Value = string | object;
-
-type Cookie = string | undefined;
+import * as JSCookies from "js-cookie";
 
 interface Attributes {
     /**
@@ -13,7 +9,7 @@ interface Attributes {
     expires?: number | Date;
 
     /**
-     * Define the path where the cookie is available. Defaults to '/'.
+     * Define the path where the cookie is available. Defaults to "/".
      */
     path?: string;
 
@@ -34,7 +30,7 @@ interface Attributes {
      * providing some protection against cross-site request forgery
      * attacks (CSRF).
      */
-    sameSite?: 'strict' | 'Strict' | 'lax' | 'Lax' | 'none' | 'None';
+    sameSite?: "strict" | "Strict" | "lax" | "Lax" | "none" | "None";
 }
 
 interface AllCookies {
@@ -44,6 +40,10 @@ interface AllCookies {
 interface ParsedJSON {
     [key: string]: any;
 }
+
+type Value = string | object;
+
+type Cookie = string | undefined;
 
 /**
  * Manages the lifecycle of browser cookies.

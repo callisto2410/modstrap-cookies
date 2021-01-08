@@ -1,5 +1,3 @@
-declare type Value = string | object;
-declare type Cookie = string | undefined;
 interface Attributes {
     /**
      * Define when the cookie will be removed. Value can be a Number
@@ -8,7 +6,7 @@ interface Attributes {
      */
     expires?: number | Date;
     /**
-     * Define the path where the cookie is available. Defaults to '/'.
+     * Define the path where the cookie is available. Defaults to "/".
      */
     path?: string;
     /**
@@ -26,7 +24,7 @@ interface Attributes {
      * providing some protection against cross-site request forgery
      * attacks (CSRF).
      */
-    sameSite?: 'strict' | 'Strict' | 'lax' | 'Lax' | 'none' | 'None';
+    sameSite?: "strict" | "Strict" | "lax" | "Lax" | "none" | "None";
 }
 interface AllCookies {
     [key: string]: string;
@@ -34,6 +32,8 @@ interface AllCookies {
 interface ParsedJSON {
     [key: string]: any;
 }
+declare type Value = string | object;
+declare type Cookie = string | undefined;
 /**
  * Manages the lifecycle of browser cookies.
  *
