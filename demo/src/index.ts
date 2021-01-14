@@ -1,3 +1,5 @@
+import "./index.scss";
+
 import Cookies from "../../src/Cookies";
 
 const test_0 = {
