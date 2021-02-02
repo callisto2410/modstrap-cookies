@@ -48,48 +48,27 @@ export declare class Cookies {
      *
      * @param name
      * @param value
-     */
-    static set(name: string, value: CookiesValue): CookiesCookie;
-    /**
-     * Create a cookie.
-     *
-     * @param name
-     * @param value
      * @param options
      */
-    static set(name: string, value: CookiesValue, options: CookiesAttributes): CookiesCookie;
-    /**
-     * Read all available cookies.
-     */
-    static get(): CookiesAllCookies;
+    static set(name: string, value: CookiesValue, options?: CookiesAttributes): CookiesCookie;
     /**
      * Read cookie.
      *
      * @param name
      */
-    static get(name: string): CookiesCookie;
-    /**
-     * Returns the parsed representation of all cookies according to JSON.parse.
-     */
-    static getJSON(): CookiesParsedJSON;
+    static get(name?: string): CookiesCookie | CookiesAllCookies;
     /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
      *
      * @param name
      */
-    static getJSON(name: string): CookiesCookie | CookiesParsedJSON;
-    /**
-     * Delete cookie.
-     *
-     * @param name
-     */
-    static remove(name: string): void;
+    static getJSON(name?: string): CookiesCookie | CookiesParsedJSON;
     /**
      * Delete cookie.
      *
      * @param name
      * @param options
      */
-    static remove(name: string, options: CookiesAttributes): void;
+    static remove(name: string, options?: CookiesAttributes): void;
 }
 export default Cookies;

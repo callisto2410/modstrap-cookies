@@ -59,40 +59,11 @@ export class Cookies {
      *
      * @param name
      * @param value
-     */
-    public static set(name: string, value: CookiesValue): CookiesCookie;
-
-    /**
-     * Create a cookie.
-     *
-     * @param name
-     * @param value
-     * @param options
-     */
-    public static set(name: string, value: CookiesValue, options: CookiesAttributes): CookiesCookie;
-
-    /**
-     * Create a cookie.
-     *
-     * @param name
-     * @param value
      * @param options
      */
     public static set(name: string, value: CookiesValue, options?: CookiesAttributes): CookiesCookie {
         return JSCookies.set(name, value, options);
     }
-
-    /**
-     * Read all available cookies.
-     */
-    public static get(): CookiesAllCookies;
-
-    /**
-     * Read cookie.
-     *
-     * @param name
-     */
-    public static get(name: string): CookiesCookie;
 
     /**
      * Read cookie.
@@ -104,18 +75,6 @@ export class Cookies {
     }
 
     /**
-     * Returns the parsed representation of all cookies according to JSON.parse.
-     */
-    public static getJSON(): CookiesParsedJSON;
-
-    /**
-     * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
-     *
-     * @param name
-     */
-    public static getJSON(name: string): CookiesCookie | CookiesParsedJSON;
-
-    /**
      * Returns the parsed representation of the string stored in the cookie according to JSON.parse.
      *
      * @param name
@@ -123,21 +82,6 @@ export class Cookies {
     public static getJSON(name?: string): CookiesCookie | CookiesParsedJSON {
         return JSCookies.getJSON();
     }
-
-    /**
-     * Delete cookie.
-     *
-     * @param name
-     */
-    public static remove(name: string): void;
-
-    /**
-     * Delete cookie.
-     *
-     * @param name
-     * @param options
-     */
-    public static remove(name: string, options: CookiesAttributes): void;
 
     /**
      * Delete cookie.
