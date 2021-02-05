@@ -41,6 +41,9 @@ export declare type CookiesCookie = string | undefined;
  * @see get
  * @see getJSON
  * @see remove
+ *
+ * Cookies:
+ * [Github]{@link https://github.com/callisto2410/modstrap-cookies}
  */
 export declare class Cookies {
     /**
