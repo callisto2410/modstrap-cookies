@@ -16,9 +16,9 @@ const test_1 = {
 
 const test_2 = "I hope you find this information useful!";
 
-Cookies.set("test_0", test_0, {expires: 7});
-Cookies.set("test_1", test_1, {expires: 7});
-Cookies.set("test_2", test_2, {expires: 7});
+Cookies.set("test_0", test_0, { expires: 7 });
+Cookies.set("test_1", test_1, { expires: 7 });
+Cookies.set("test_2", test_2, { expires: 7 });
 
 function printResult(name: string): void {
     let string = Cookies.get(name);
