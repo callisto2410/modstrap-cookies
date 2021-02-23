@@ -6,19 +6,19 @@ const test_0 = {
     test_0_1: 1,
     test_0_2: 2,
     test_0_3: 3,
-}
+};
 
 const test_1 = {
     test_1_1: true,
     test_1_2: false,
     test_1_3: [1, 2, 3, 4, 5],
-}
+};
 
 const test_2 = "I hope you find this information useful!";
 
-Cookies.set("test_0", test_0, { expires: 7 });
-Cookies.set("test_1", test_1, { expires: 7 });
-Cookies.set("test_2", test_2, { expires: 7 });
+Cookies.set("test_0", test_0, {expires: 7});
+Cookies.set("test_1", test_1, {expires: 7});
+Cookies.set("test_2", test_2, {expires: 7});
 
 function printResult(name: string): void {
     let string = Cookies.get(name);
